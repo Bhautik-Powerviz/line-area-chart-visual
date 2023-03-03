@@ -1,0 +1,96 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Axis",
+            "name": "category",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Values",
+            "name": "measure",
+            "kind": "Measure"
+        }
+    ],
+    "objects": {
+        "visualSetting": {
+            "displayName": "Visual Settings",
+            "properties": {
+                "lasso": {
+                    "displayName": "Enable Lasso",
+                    "description": "",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "reverseLasso": {
+                    "displayName": "Enable Reverse Lasso",
+                    "description": "",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "license": {
+            "displayName": "PowerVIZ License",
+            "properties": {
+                "purchased": {
+                    "displayName": "",
+                    "description": "",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "customer": {
+                    "displayName": "Licensed To",
+                    "description": "",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "key": {
+                    "displayName": "License",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        },
+        "chartConfig": {
+            "displayName": "Chart Configuration",
+            "properties": {
+                "chartSettings": {
+                    "displayName": "Chart Settings",
+                    "description": "",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {}
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "measure"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "privileges": []
+}
