@@ -1,0 +1,46 @@
+.radio-input {
+  display: flex;
+  align-items: center;
+
+  &-element {
+    color: var(--text-color);
+    background-color: var(--text-input-bg);
+  }
+
+  &-selected {
+    background-color: #edd100;
+    color: #222;
+  }
+}
+
+.font-styling {
+  .radio-input {
+    .radio-input-element {
+      font-size: 13px;
+      font-weight: bold;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 5px;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .radio-bold {
+      font-style: bold;
+    }
+
+    .radio-italic {
+      font-style: italic;
+    }
+
+    .radio-underline {
+      text-decoration: underline;
+    }
+
+    .radio-strikethrough {
+      text-decoration: line-through;
+    }
+  }
+}

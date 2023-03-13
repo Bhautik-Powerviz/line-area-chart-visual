@@ -1,0 +1,52 @@
+.tooltip-wrapper {
+  background-color: rgb(51, 51, 51);
+  position: absolute;
+  padding: 12px;
+  transition: visible 0.3s;
+  width: fit-content;
+  height: fit-content;
+
+  .tooltip-row {
+    display: table-row;
+
+    div {
+      font-family: "Segoe UI", wf_segoe-ui_normal, helvetica, arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .tooltip-title-cell {
+      display: table-cell;
+      word-wrap: break-word;
+      max-width: 260px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 12px;
+      text-align: right;
+      color: rgb(200, 200, 200);
+    }
+
+    .tooltip-value-cell {
+      color: rgb(234, 234, 234);
+      display: table-cell;
+      word-wrap: break-word;
+      max-width: 260px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 12px;
+      text-align: left;
+    }
+
+    .tooltip-circle-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+    }
+
+    .tooltip-circle-pattern {
+      width: 12px;
+      height: 20px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}

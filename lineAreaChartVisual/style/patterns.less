@@ -1,0 +1,71 @@
+.pattern-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+
+  .pattern-selector {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .fileUploader {
+    margin-left: 5px;
+  }
+
+  .fileContainer {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 38px;
+    position: static !important;
+    background: #404246 !important;
+    border-radius: 5px;
+
+    .errorsContainer {
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      font-size: 10px;
+    }
+
+    .uploadPictureContainer {
+      margin: 0;
+      width: 100%;
+      padding: 0;
+      border: 0;
+
+      img {
+        max-height: 38px;
+      }
+    }
+
+    .chooseFileButton {
+      position: absolute;
+      height: 100%;
+      margin: 0;
+      background: transparent url("./../assets/image-upload.png") !important;
+      background-size: 14px !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .deleteImage {
+      font-size: 12px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      position: absolute;
+      top: -11px;
+      right: -11px;
+      color: #000;
+      border: 1px solid #2f3236;
+      background: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 66%);
+    }
+  }
+}

@@ -1,0 +1,925 @@
+/* Annotation Icon Wrapper */
+.icon-wrapper {
+  /* width: 30px;
+  height: 30px;
+  border-radius: 50%; */
+  position: relative;
+  /* background: none !important; */
+}
+/* 
+.icon-wrapper > div{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: 0;
+  width: 20px;
+  height: 20px;
+} */
+.annotation-dropdown {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 65px;
+  filter: drop-shadow(1px 1px 5px #e1e1e1);
+  background: #fff;
+}
+.annotation-dropdown .annotation-dropdown-item {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+.annotation-dropdown-item:hover {
+  background: #ededed;
+}
+.annotation-dropdown .annotation-dropdown-item.annotation-dropdown-item-active {
+  background: #dddddd;
+}
+.hide-annotation {
+  display: none;
+}
+.annotation-note-bg {
+  fill-opacity: 0;
+  stroke: none;
+}
+circle.handle {
+  r: 0;
+  fill-opacity: 0;
+  stroke: none;
+}
+.annotation-note .handle {
+  fill: none;
+}
+g.annotation-connector .connector {
+  stroke-width: 2px;
+}
+.annotation-subject {
+  cursor: move;
+}
+.annotation-subject .badge-text {
+  font-family: serif;
+  font-style: italic;
+  font-size: 19px;
+  fill: #fff;
+}
+.annotation-connector-dashed .connector {
+  stroke-dasharray: 4;
+}
+.annotation-badge-numeric .annotation-subject .badge-text {
+  font-style: normal;
+}
+/* Annotation Window */
+.annotations-options-title p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+.annotation-window-wrapper {
+  width: 90%;
+  max-width: 680px;
+  padding: 20px;
+  background-color: var(--annotation-window-wrapper-bg);
+  position: relative;
+  box-shadow: 1px -1px 10px #c7c7c7;
+  border-radius: 5px;
+}
+.annotation-toolbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+}
+.annotation-close-btn {
+  float: right;
+}
+.annotation-close-btn button {
+  cursor: pointer;
+  border: 0;
+  color: #707070;
+  background: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+.annotation-window-header p {
+  font-size: 14px;
+}
+.annotation-window-header button {
+  background: #e7e7e7;
+  border: 0;
+  padding: 0 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.annotation-window-header button:hover {
+  background: #edd100;
+}
+.annotation-window-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.annotation-save-btn {
+  outline: 0;
+  background: #edd100;
+  color: #000;
+  margin-top: 5.9px;
+  margin-left: auto;
+  font-size: 12px;
+  padding: 5px 15px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.annotation-window-footer .annotation-footer-section-wrapper {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+  margin-top: 5px;
+}
+
+.annotation-window-footer .annotation-footer-section-wrapper > div {
+  padding-right: 5px;
+}
+
+.annotation-window-footer .annotation-footer-section-title {
+  color: var(--text-color);
+  font-size: 11px;
+  padding-right: 12px;
+}
+.ql-container.ql-snow {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: none !important;
+  overflow: hidden;
+}
+.ql-container .ql-tooltip {
+  display: none !important;
+}
+.annotation-window .ql-editor {
+  max-height: 150px;
+  min-height: 140px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+.annotation-window .ql-editor p {
+  font-size: 14px;
+  font-weight: normal;
+}
+.annotation-window .ql-toolbar.ql-snow {
+  border: none;
+  padding: 0;
+}
+.annotation-window .ql-toolbar.ql-snow .ql-picker-label {
+  overflow: hidden;
+  background: var(--text-input-bg);
+  color: var(--text-color);
+  border-radius: 2px;
+}
+.annotation-window .ql-snow .ql-picker {
+  font-size: 12px;
+  height: 28px;
+}
+.ql-bold,
+.ql-italic,
+.ql-underline {
+  border-right: 1px solid var(--annotation-editor-format-border-right) !important;
+}
+.ql-underline {
+  border-right: 0 !important;
+}
+.ql-customlink,
+.ql-image {
+  height: 26px !important;
+}
+.annotation-window .ql-snow .ql-picker.ql-font {
+  width: 130px;
+}
+.annotation-window .ql-snow .ql-picker.ql-size {
+  width: 45px !important;
+  margin-left: 5px;
+}
+.annotations-options-wrapper > span,
+.annotations-options-wrapper > button {
+  margin-top: 5px;
+  float: left;
+}
+/* .annotation-window .color-picker-module-shadow {
+  height: auto;
+} */
+.annotation-window-footer .color-picker-module-shadow {
+  display: flex;
+  padding: 5.5px;
+  height: auto;
+  background: var(--text-input-bg);
+  border-radius: 2px;
+}
+
+.annotation-window-footer .color-picker-module-shadow .swatch {
+  box-shadow: none;
+}
+
+.annotation-window .color-popover {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.85);
+}
+.annotation-window .cover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.annotation-style-selected {
+  background-color: var(--text-input-bg) !important;
+  outline: 1px solid #8f8f8f;
+}
+.annotation-window .color-picker-module-shadow .sketch-picker-container {
+  border: 1px solid #c7c7c7;
+}
+/* Input group addon */
+.marker-option {
+  display: flex;
+}
+
+.marker-option-wrapper {
+  background-color: var(--text-input-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 5px;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+.marker-info-option-wrapper {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.marker-numeric-option-wrapper {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin-right: 5px;
+}
+
+.badgesize-input {
+  position: relative;
+}
+
+.badgesize-input input {
+  width: 30px;
+  padding: 6.5px 8px;
+  color: var(--text-color);
+  background: var(--text-input-bg);
+  border: none;
+  outline: none;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.badgesize-input input::-webkit-outer-spin-button,
+.badgesize-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.badgesize-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.badgesize-input span {
+  font-size: 11px;
+  position: absolute;
+  right: 5px;
+  top: 6px;
+}
+
+.annotation-window .input-group {
+  display: flex;
+  align-content: stretch;
+  margin-left: 5px;
+}
+.annotation-window .input-group > input {
+  flex: 1 0 auto;
+  font-size: 12px;
+  width: 34px;
+}
+.annotation-window .input-group-addon {
+  background: #e7e7e7;
+  border: 1px solid #ccc;
+  padding: 3px 6px;
+  font-size: 12px;
+}
+/* Input group addon */
+/* Toolbar icons hover color */
+/* .ql-snow.ql-toolbar button:hover .ql-stroke, .ql-snow .ql-toolbar button:hover .ql-stroke, .ql-snow.ql-toolbar button:focus .ql-stroke, .ql-snow .ql-toolbar button:focus .ql-stroke, .ql-snow.ql-toolbar button.ql-active .ql-stroke, .ql-snow .ql-toolbar button.ql-active .ql-stroke, .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke, .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke, .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke, .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke, .ql-snow.ql-toolbar button:hover .ql-stroke-miter, .ql-snow .ql-toolbar button:hover .ql-stroke-miter, .ql-snow.ql-toolbar button:focus .ql-stroke-miter, .ql-snow .ql-toolbar button:focus .ql-stroke-miter, .ql-snow.ql-toolbar button.ql-active .ql-stroke-miter, .ql-snow .ql-toolbar button.ql-active .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter{
+  stroke: #3A3D41 !important;
+} */
+.ql-snow.ql-toolbar button .ql-fill,
+.ql-snow.ql-toolbar button:hover .ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
+  fill: var(--text-color) !important;
+}
+/* Toolbar icons hover color */
+.ql-toolbar.ql-snow .ql-formats {
+  margin-right: 5px !important;
+}
+.ql-font .ql-picker-label svg,
+.ql-size .ql-picker-label svg,
+.ql-insertDataValues .ql-picker-label svg {
+  width: 0px !important;
+}
+.ql-font .ql-picker-label:after,
+.ql-size .ql-picker-label:after,
+.ql-insertDataValues .ql-picker-label:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: black !important;
+  content: "\f078";
+  position: absolute;
+  top: 6px;
+  right: 4px;
+}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+/* Toolbar Font family dropdown */
+.ql-formats .ql-picker-options {
+  height: 140px;
+  overflow-y: scroll;
+}
+.ql-font-arial,
+.ql-font span[data-value="arial"]::before {
+  font-family: "Arial";
+}
+.ql-font-arial-black,
+.ql-font span[data-value="arial black"]::before {
+  font-family: "Arial Black";
+}
+.ql-font-calibri,
+.ql-font span[data-value="calibri"]::before {
+  font-family: "Calibri";
+}
+.ql-font-cambria,
+.ql-font span[data-value="cambria"]::before {
+  font-family: "Cambria";
+}
+.ql-font-cambria-math,
+.ql-font span[data-value="cambria math"]::before {
+  font-family: "Cambria Math";
+}
+.ql-font-candara,
+.ql-font span[data-value="candara"]::before {
+  font-family: "Candara";
+}
+.ql-font-comic-sans-ms,
+.ql-font span[data-value="comic sans ms"]::before {
+  font-family: "Comic Sans MS";
+}
+.ql-font-consolas,
+.ql-font span[data-value="consolas"]::before {
+  font-family: "Consolas";
+}
+.ql-font-constantia,
+.ql-font span[data-value="constantia"]::before {
+  font-family: "Constantia";
+}
+.ql-font-corbel,
+.ql-font span[data-value="corbel"]::before {
+  font-family: "Corbel";
+}
+.ql-font-courier-new,
+.ql-font span[data-value="courier new"]::before {
+  font-family: "Courier New";
+}
+.ql-font-georgia,
+.ql-font span[data-value="georgia"]::before {
+  font-family: "Georgia";
+}
+.ql-font-lucida-sans-unicode,
+.ql-font span[data-value="lucida sans"]::before {
+  font-family: "Lucida Sans";
+}
+.ql-font-segoe-ui,
+.ql-font span[data-value="segoe ui"]::before {
+  font-family: "Segoe UI";
+}
+.ql-font-tahoma,
+.ql-font span[data-value="tahoma"]::before {
+  font-family: "Tahoma";
+}
+.ql-font-times-new-roman,
+.ql-font span[data-value="times-new-roman"]::before {
+  font-family: "Times New Roman";
+}
+.ql-font-trebuchet-ms,
+.ql-font span[data-value="trebuchet-ms"]::before {
+  font-family: "Trebuchet MS";
+}
+.ql-font-verdana,
+.ql-font span[data-value="verdana"]::before {
+  font-family: "Verdana";
+}
+/* Toolbar Font family dropdown */
+.ql-snow .ql-picker-label::before {
+  line-height: 25px !important;
+}
+/* Toolbar custom dropdown */
+.ql-picker.ql-insertDataValues {
+  width: 90px;
+  margin-left: 5px;
+}
+.ql-picker.ql-insertDataValues .ql-picker-options span[data-label="Σ Insert"] {
+  display: none;
+}
+.ql-picker.ql-insertDataValues .ql-picker-item::before {
+  content: attr(data-label);
+}
+.ql-picker.ql-insertDataValues .ql-picker-label::before {
+  content: "Σ Insert";
+}
+/* Toolbar custom dropdown */
+.annotation-window-wrapper .color-container {
+  margin-top: 0;
+}
+.annotation-window-wrapper .color-picker-module-shadow .color {
+  width: 25px;
+  height: 20px;
+}
+/* Color Presets */
+.annotation-color-preset-wrapper {
+  display: flex;
+  margin-bottom: 5px;
+}
+.annotation-color-preset-active {
+  outline: 2px solid #facc00;
+}
+.annotation-color-preset {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  outline-offset: 2px;
+}
+.annotation-color-preset:last-child {
+  margin-right: 0;
+}
+.annotation-color-preset-red {
+  background: red;
+}
+.annotation-color-preset-green {
+  background: green;
+}
+.annotation-color-preset-blue {
+  background: blue;
+}
+/* Color Presets */
+/* Orderlist on hover */
+.list-formats {
+  position: relative;
+}
+.list-formats button[value="ordered"] {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  display: none !important;
+}
+.list-formats button[value="bullet"]:hover .list-formats button[value="ordered"] {
+  display: block !important;
+}
+/* Removing Hover/Active effect */
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+  color: var(--text-color) !important;
+}
+
+.ql-snow.ql-toolbar .ql-formats .ql-font .ql-picker-item.ql-selected,
+.ql-snow.ql-toolbar .ql-insertDataValues .ql-picker-item.ql-selected,
+.ql-snow.ql-toolbar .ql-formats .ql-font .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-insertDataValues .ql-picker-item:hover {
+  margin-left: -8px;
+  margin-right: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #444 !important;
+}
+.ql-snow.ql-toolbar .ql-formats .ql-picker-item.ql-selected,
+.ql-snow.ql-toolbar .ql-align .ql-picker-item.ql-selected,
+.ql-snow.ql-toolbar .ql-insertDataValues .ql-picker-item.ql-selected {
+  background-color: #e0e3e5b3;
+}
+
+.ql-snow.ql-toolbar .ql-formats .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-align .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-insertDataValues .ql-picker-item:hover {
+  background-color: #e0e3e566;
+}
+
+/* Removing Hover/Active effect */
+.ql-snow .ql-stroke:not(.ql-color-label) {
+  stroke: var(--text-color) !important;
+}
+.ql-picker-options .ql-stroke:not(.ql-color-label) {
+  stroke: #000 !important;
+}
+.ql-color-label:hover {
+  stroke: #000 !important;
+}
+.ql-picker-label .ql-fill.ql-color-label {
+  /* stroke: #FFF !important; */
+}
+.ql-color-label.ql-stroke.ql-transparent {
+  opacity: 1 !important;
+}
+.ql-snow.ql-toolbar > button,
+.ql-snow.ql-toolbar .ql-formats button,
+.ql-customlink,
+.ql-image {
+  background: var(--text-input-bg) !important;
+  height: 28px !important;
+  padding: 6px !important;
+  width: 28px !important;
+}
+.ql-snow.ql-toolbar > button:hover,
+.ql-snow.ql-toolbar .ql-formats button:hover,
+.ql-customlink:hover,
+.ql-image:hover {
+  background-color: var(--text-input-bg) !important;
+}
+.ql-snow button.ql-active {
+  background: #d4d4d4 !important;
+}
+
+.ql-customlink,
+.ql-image {
+  margin-left: 5px;
+}
+
+.annotation-measure-datavalue {
+  border-bottom: 2px solid rgb(238, 190, 17);
+  transition: background 0.2s;
+}
+.annotation-measure-datavalue:hover {
+  background: rgba(238, 190, 17, 0.15);
+}
+
+/* Override the default styling of quill-snow.css */
+
+.ql-snow .ql-color-picker.ql-expanded .ql-picker-options {
+  margin-top: 0px !important;
+}
+
+/* Annotation Text Edit Window */
+.annotation-edit-header {
+  display: flex;
+  position: fixed;
+  top: 3px;
+  right: 0;
+}
+.annotation-edit-header > div {
+  width: 15px;
+  height: 15px;
+  margin-right: 2px;
+  background-size: cover;
+  cursor: pointer;
+}
+.annotation-edit-header-edit-icon {
+  background-image: url("../assets/edit-annotation.svg");
+}
+.annotation-edit-header-edit-icon:hover {
+  background-image: url("../assets/edit-annotation-active.svg");
+}
+.annotation-edit-header-delete-icon {
+  background-image: url("../assets/delete-annotation.svg");
+}
+.annotation-edit-header-delete-icon:hover {
+  background-image: url("../assets/delete-annotation-active.svg");
+}
+.annotation-edit-header-close-icon {
+  text-align: center;
+  font-size: 15px;
+  line-height: 16px;
+}
+.annotation-edit-header-close-icon:hover {
+  color: #edd100;
+}
+.annotation-foreign-object-wrapper {
+  padding: 10px;
+}
+.annotation-foreign-object {
+  overflow: auto;
+  background: #ffffff;
+  cursor: move;
+  box-shadow: 0px 2px 6px #0000005c;
+}
+.annotation-foreign-object a {
+  color: navy;
+  text-decoration: underline;
+}
+.annotation-foreign-object ul {
+  padding-left: 15px;
+  margin: 0;
+}
+.annotation-foreign-object ul li {
+  list-style: initial;
+}
+/* Annotation Text Edit Window */
+.default-badge-selector text {
+  font-family: serif;
+  font-style: italic;
+  font-size: 19px;
+  fill: #fff;
+}
+.numeric-badge-selector text {
+  font-family: serif;
+  font-size: 15px;
+  fill: #fff;
+}
+.annotation {
+  cursor: initial;
+}
+.annotation-cursor {
+  cursor: url("../assets/annotation-active-cursor.svg"), auto;
+}
+.initial-cursor {
+  cursor: initial;
+}
+/* Link Editor */
+.annotation-customlink-wrapper {
+  margin-top: 5px;
+  float: left;
+}
+.annotation-link-editor-wrapper {
+  position: absolute;
+  padding: 15px;
+  width: 60vw;
+  min-width: 150px;
+  max-width: 310px;
+  height: 130px;
+  z-index: 80;
+  background-color: #fff;
+  border: 1px solid #cfcfcf;
+  display: none;
+  top: 6vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-shadow: 1px -1px 10px #c7c7c7;
+  border-radius: 5px;
+}
+#annotation-link-ok-btn::before {
+  content: "OK";
+}
+#annotation-link-ok-btn svg {
+  display: none;
+}
+.annotation-link-editor-wrapper label,
+.annotation-link-editor-wrapper input {
+  font-size: 12px;
+}
+.annotation-link-editor-wrapper label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.annotation-link-editor-wrapper input {
+  width: 85%;
+  float: right;
+  outline: none;
+  border: 1px solid #b5b5b5;
+  padding: 4px;
+  border-radius: 2px;
+  font-size: 11px;
+  margin-left: 8px;
+}
+.annotation-link-editor-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  text-align: center;
+  margin-top: 6px;
+}
+.annotation-link-editor-buttons button {
+  width: auto !important;
+  height: auto !important;
+  font-size: 12px;
+  margin-left: 10px;
+  padding: 4px 13px !important;
+  border-radius: 3px;
+}
+#annotation-link-cancel-btn {
+  color: #fff;
+  background-color: #5a6268;
+}
+#annotation-link-cancel-btn:hover {
+  color: #fff !important;
+}
+#annotation-link-ok-btn {
+  color: #000;
+  background: #edd100;
+}
+.annotation-link-editor-wrapper .annotation-close-btn button {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
+  border: 0 !important;
+  background: #edd100 !important;
+  font-size: 10px;
+  line-height: 0px;
+  position: absolute;
+  top: -10px;
+  color: #3a3d41;
+}
+/* .annotation-window .ql-editor::-webkit-scrollbar-thumb, .annotation-window .ql-editor *::-webkit-scrollbar-thumb,
+.annotation-foreign-object::-webkit-scrollbar-thumb, .annotation-foreign-object *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+.annotation-foreign-object::-webkit-scrollbar-thumb,
+.annotation-foreign-object::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 0px 50px #EDD100;
+  box-shadow: inset 0 0 0px 50px #EDD100;
+  background-color: #EDD100;
+} */
+.annotation-window .ql-editor::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+.annotation-window .ql-editor::-webkit-scrollbar {
+  width: 5px;
+}
+.annotation-window .ql-editor::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 0px 50px #edd100;
+  box-shadow: inset 0 0 0px 50px #edd100;
+  background-color: #edd100;
+  border-radius: 4px;
+}
+.annotation-foreign-object-wrapper::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+.annotation-foreign-object-wrapper::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.annotation-foreign-object-wrapper::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 0px 50px #cccccc;
+  box-shadow: inset 0 0 0px 50px #cccccc;
+  background-color: #edd100;
+  border-radius: 4px;
+}
+.ql-picker-options::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+.ql-picker-options::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.ql-picker-options::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 0px 50px #cccccc;
+  box-shadow: inset 0 0 0px 50px #cccccc;
+  background-color: #cccccc;
+  border-radius: 4px;
+}
+.quill-editor-wrapper {
+  position: relative;
+}
+.annotation-window-background-color-wrapper {
+  display: inline-block;
+  float: left;
+  align-items: center;
+  background: var(--text-input-bg);
+  margin: 5px;
+  height: 28px;
+}
+.annotation-window-background-color {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.annotation-window-background-color .color-picker-module-shadow {
+  padding-left: 7px;
+}
+.annotation-window-background-color .swatch {
+  box-shadow: none;
+}
+
+.annotation-window-background-color .color-picker-module-shadow .color {
+  height: 18px;
+}
+/* .annotation-window-background-color {
+  height: 45px;
+  width: 45px;
+  background: #EDEDED;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 14px 15px;
+}
+.annotation-window-background-color .swatch {
+  box-shadow: none;
+  height: 25px;
+  width: 20px;
+  background: url('../assets/annotation-background-fill.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.annotation-window-background-color .swatch .color {
+  height: 0px;
+} */
+/* Added below style to override the transform values getting applied from d3-annotation library */
+.annotation-note-content {
+  /* transform: none !important; */
+}
+
+.annotation-control-close,
+.annotation-control-edit,
+.annotation-control-delete {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.annotation-window-wrapper .cover-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.annotation-window-wrapper .color-picker-module-shadow button {
+  border-radius: 3px !important;
+  outline: 0 !important;
+  padding: 4px 12px !important;
+  border: 1px solid #edd100 !important;
+  cursor: pointer !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.annotation-window-wrapper .color-picker-module-shadow button:hover {
+  color: var(--text-color) !important;
+}
+.annotation-window-wrapper .color-picker-module-shadow button.disabled {
+  background: #969696 !important;
+  color: #fff !important;
+  cursor: default !important;
+}
+.annotation-window-wrapper .color-picker-module-shadow .btn-cancel {
+  border-color: #707070 !important;
+  background: none !important;
+  color: var(--text-color) !important;
+  margin-right: 8px !important;
+}
+.annotation-window-wrapper .color-picker-module-shadow .btn-apply {
+  background: #edd100 !important;
+  color: #000 !important;
+}
+.annotation-window-wrapper .color-picker-module-shadow .btn-apply:hover {
+  color: #000 !important;
+}

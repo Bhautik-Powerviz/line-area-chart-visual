@@ -26,58 +26,141 @@
 
 "use strict";
 
-import { formattingSettings } from "powerbi-visuals-utils-formattingmodel";
+import { dataViewObjectsParser } from "powerbi-visuals-utils-dataviewutils";
+import { DisplayUnits, ILegendPosition, SemanticNegativeNumberFormats, SemanticPositiveNumberFormats } from "./enum";
+import DataViewObjectsParser = dataViewObjectsParser.DataViewObjectsParser;
 
-import FormattingSettingsCard = formattingSettings.Card;
-import FormattingSettingsSlice = formattingSettings.Slice;
-import FormattingSettingsModel = formattingSettings.Model;
-
-/**
- * Data Point Formatting Card
- */
-class DataPointCardSettings extends FormattingSettingsCard {
-    defaultColor = new formattingSettings.ColorPicker({
-        name: "defaultColor",
-        displayName: "Default color",
-        value: { value: "" }
-    });
-
-    showAllDataPoints = new formattingSettings.ToggleSwitch({
-        name: "showAllDataPoints",
-        displayName: "Show all",
-        value: true
-    });
-
-    fill = new formattingSettings.ColorPicker({
-        name: "fill",
-        displayName: "Fill",
-        value: { value: "" }
-    });
-
-    fillRule = new formattingSettings.ColorPicker({
-        name: "fillRule",
-        displayName: "Color saturation",
-        value: { value: "" }
-    });
-
-    fontSize = new formattingSettings.NumUpDown({
-        name: "fontSize",
-        displayName: "Text Size",
-        value: 12
-    });
-
-    name: string = "dataPoint";
-    displayName: string = "Data colors";
-    slices: Array<FormattingSettingsSlice> = [this.defaultColor, this.showAllDataPoints, this.fill, this.fillRule, this.fontSize];
+export class VisualSettings extends DataViewObjectsParser {
+  public license = new License();
+  public chartConfig = new ChartConfig();
+  public dataColorsConfig = new DataColorsConfig();
+  public numberSettings = new NumberSettings();
+  public dataLabelsConfig = new DataLabelsConfig();
+  public gridLinesConfig = new GridLinesConfig();
+  public rankingConfig = new RankingConfig();
+  public sortingConfig = new SortingConfig();
+  public legend = new Legend();
+  public patternConfig = new PatternConfig();
+  public xAxisConfig = new XAxisConfig();
+  public yAxisConfig = new YAxisConfig();
+  public referenceLinesConfig = new ReferenceLinesConfig();
+  public barChartRaceConfig = new BarChartRaceConfig();
+  public errorBarsConfig = new ErrorBarsConfig();
+  public editor = new Editor();
+  public visualSetting = new VisualSetting();
+  public seriesLabelConfig = new SeriesLabelConfig();
+  public smallMultiplesConfig = new SmallMultiplesConfig();
+  public dynamicDeviationConfig = new DynamicDeviationConfig();
+  public cutAndClipAxisConfig = new CutAndClipAxisConfig();
 }
 
-/**
-* visual settings model class
-*
-*/
-export class VisualFormattingSettingsModel extends FormattingSettingsModel {
-    // Create formatting settings model formatting cards
-    dataPointCard = new DataPointCardSettings();
+export class License {
+  public purchased: string = "";
+  public customer: string = "";
+  public key: string = "";
+}
 
-    cards = [this.dataPointCard];
+export class ChartConfig {
+  public chartSettings: string = "{}";
+}
+
+export class DataColorsConfig {
+  public dataColorsSettings: string = "{}";
+}
+
+export class DataLabelsConfig {
+  public dataLabelsSettings: string = "{}";
+}
+
+export class GridLinesConfig {
+  public gridLinesSettings: string = "{}";
+}
+
+export class RankingConfig {
+  public rankingSettings: string = "{}";
+}
+
+export class SortingConfig {
+  public sortingSettings: string = "{}";
+}
+
+export class SeriesLabelConfig {
+  public seriesLabelSettings: string = "{}";
+}
+
+export class SmallMultiplesConfig {
+  public smallMultiplesSettings: string = "{}";
+}
+
+export class DynamicDeviationConfig {
+  public dynamicDeviationSettings: string = "{}";
+}
+
+export class CutAndClipAxisConfig {
+  public cutAndClipAxisSettings: string = "{}";
+}
+
+export class PatternConfig {
+  public patternSettings: string = "{}";
+}
+
+export class XAxisConfig {
+  public xAxisSettings: string = "{}";
+}
+
+export class YAxisConfig {
+  public yAxisSettings: string = "{}";
+}
+
+export class ReferenceLinesConfig {
+  public referenceLinesSettings: string = "{}";
+}
+
+export class BarChartRaceConfig {
+  public barChartRaceSettings: string = "{}";
+}
+
+export class ErrorBarsConfig {
+  public errorBarsSettings: string = "{}";
+}
+
+export class NumberSettings {
+  public show: boolean = true;
+  public decimalSeparator: string = ".";
+  public thousandsSeparator: string = ",";
+  public decimalPlaces: number = 0;
+  public displayUnits: DisplayUnits = DisplayUnits.Auto;
+  public prefix: string = "";
+  public suffix: string = "";
+  public thousands: string = "K";
+  public million: string = "M";
+  public billion: string = "B";
+  public trillion: string = "T";
+  public isSemanticFormattingEnabled: boolean = false;
+  public negativeNumberColor: string = "#d0021b";
+  public negativeNumberFormat: SemanticNegativeNumberFormats = SemanticNegativeNumberFormats.MinusX;
+  public positiveNumberColor: string = "#17b169";
+  public positiveNumberFormat: SemanticPositiveNumberFormats = SemanticPositiveNumberFormats.X;
+}
+
+export class Legend {
+  public show: boolean = true;
+  public legendPosition: string = "TopLeft";
+  public showTitle: boolean = true;
+  public legendTitle: string = "";
+  public legendColor: string = "#000";
+  public fontSize: string = "8";
+  public fontFamily: string = "Segoe UI";
+}
+
+export class Editor {
+  public conditionalFormatting: string = "";
+  public annotations: string = "[]";
+}
+
+export class VisualSetting {
+  public advancedSettings: boolean = true;
+  public lasso: boolean = true;
+  public reverseLasso: boolean = true;
+  public tableView: boolean = true;
 }

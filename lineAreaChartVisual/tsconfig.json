@@ -1,19 +1,18 @@
 {
-    "compilerOptions": {
-        "allowJs": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "target": "es6",
-        "sourceMap": true,
-        "outDir": "./.tmp/build/",
-        "moduleResolution": "node",
-        "declaration": true,
-        "lib": [
-            "es2015",
-            "dom"
-        ]
-    },
-    "files": [
-        "./src/visual.ts"
-    ]
+  "compilerOptions": {
+    "jsx": "react",
+    "types": ["react", "react-dom", "node"],
+    "allowJs": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./.tmp/build/",
+    "moduleResolution": "node",
+    "declaration": true,
+    "lib": ["es2019", "dom"],
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": false
+  },
+  "files": ["./src/visual.ts", "custom.d.ts"]
 }
